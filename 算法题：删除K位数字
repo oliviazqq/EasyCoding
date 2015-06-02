@@ -1,4 +1,23 @@
 1.问题描述
 现有一个n位数，你需要删除其中的K位，请问如何删除才能使得剩下的数最大
-2.问题分析
-（1）贪心解法，每次从高位向低位数，删除高位比低位数字小的数字，直到删除了k位之后
+2.算法分析
+贪心解法，每次从高位向低位数，删除高位比低位数字小的数字，直到删除了k位之后
+3.代码实现
+void deleteK(k,name)
+{
+  bool flag = true;
+  int i;
+  while(k--&&flag){
+    flag = false;
+    len = name.length();
+    for(i=0;i<len;i++)
+      if(name[i]<name[i+1]&&i+1<len){
+        name.erase(i,1);
+        len--;
+        flag=true;
+        break;
+      }
+  }
+  cout << name <<endl;
+  }
+
